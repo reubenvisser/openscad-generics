@@ -1,7 +1,7 @@
 module rounded_cube(size, r_dim, center = false, sides_only = false){
 	x_dim = size[0] - r_dim * 2;
 	y_dim = size[1] - r_dim * 2;
-	z_dim = size[2] + (sides_only ? 0 : - r_dim * 2);
+	z_dim = size[2] + (sides_only ? -1 : -r_dim * 2); // need -1 because of cylinder height
 
 	x = (center ? - size[0] / 2 : 0) + r_dim;
 	y = (center ? - size[1] / 2 : 0) + r_dim;
